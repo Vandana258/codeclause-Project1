@@ -1,5 +1,6 @@
 const http=require("http");
 const express=require("express");
+const socketIO=require("socket.io");
 
 const app=express();
 
@@ -18,7 +19,7 @@ app.get('/',(req,res)=>{
 
 /*Socket.io setup*/
 
-const io=require("socket.io")(server);
+const io=socketIO(server);
 var users={};
 
 io.on("connection",(socket)=>{
