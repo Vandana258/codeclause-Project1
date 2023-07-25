@@ -1,0 +1,194 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    transform: translate(-50% -50%);
+    width: 70%;
+    /*overflow: hidden;*/
+    border-radius: 30px;
+}
+header{
+    background: linear-gradient(to right, #e74a4a 50%, #e69999 80%, #f14a4a 90%);
+    border:5px solid rgb(80, 5, 5);
+    color: black;
+    padding: 7px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:30px;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+button[type="button"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    display: none;
+}
+.container{
+    background-color: rgb(247, 242, 245);
+    border: 3px solid rgb(231, 141, 219);
+    display:flex;
+    justify-content: flex-start;
+    text-align: stretch;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+}
+.users-window{
+    width:350px;
+    color:rgb(58, 5, 5);
+    background: linear-gradient(to bottom, #2596a5 30%, #2bc9c9 40%, #076f7c 60%);
+    /* background: linear-gradient(to bottom, #45bb80 50%, #128559 80%, #03441c 90%);*/
+     border: 5px solid black;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.users-head{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+h4{
+    background-color: rgb(199, 25, 77);
+    border: 3px solid black;
+    padding: 0 8px;
+    border-radius: 50px;
+}
+.users-list{
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 15px;
+
+}
+.chat-window{
+    width: 100%;
+    background: linear-gradient(to bottom, #2596a5 30%, #2bc9c9 40%, #076f7c 60%);
+    /*background: linear-gradient(to bottom, #45bb80 50%, #128559 80%, #03441c 90%);*/
+   border-radius: 10px;
+   border:5px solid black;
+   overflow-y: auto;
+}
+.chats{
+    height:70vh;
+    padding: 20px;
+    /*overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.4) rgba(0,0,0,0.1);*/
+}
+.user-join{
+    font-size: 0.9rem;
+    color:black;
+    background-color: white;
+    border-radius: 50px;
+    width: max-content;
+    padding:7px 20px;
+    margin:0 auto;
+    margin-bottom: 15px;
+}
+.message-incoming{
+    color:black;
+    /*background: linear-gradient(to bottom, #f083ad 30%, #eb63ae 60%, #fc468c 70%);*/
+    background-color: pink;
+    border:2px solid black;
+    padding: 5px 20px;
+    max-width: 400px;
+    margin-bottom: 15px;
+    border-radius: 10px 50px 50px 10px;
+
+}
+.message-outgoing{
+    margin-left: auto;
+    color: black;
+    background-color: rgb(231, 233, 146);
+    /*background: linear-gradient(to bottom, #dfdc31 50%, #f1ef51 80%, #cecb2a 90%);
+    /*background: linear-gradient(to bottom, #2596a5 30%, #2bc9c9 60%, #076f7c 70%)*/
+    /*background: linear-gradient(to bottom, #45bb80 50%, #128559 80%, #03441c 90%);
+    /*background: linear-gradient(to bottom, #2596a5 30%, #2bc9c9 60%, #076f7c 70%);*/
+    border-radius: 50px 10px 10px 50px;
+    max-width:400px;
+    border:2px solid black;
+    text-align: right;
+    padding: 5px 20px;
+    margin-bottom: 15px;
+}
+.user-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+input[type="text"]{
+    font-size: 10px;
+    background-color: azure;
+    padding: 10px 20px;
+    outline: none;
+    border:3px solid black;
+    width:100%;
+    border-radius: 50px 0 0 50px;
+}
+#user_send{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border:3px solid black;
+    outline: none;
+    letter-spacing: 0.5px;
+    color: rgb(235, 230, 225);
+    background-color: rgb(15, 199, 45);
+    border-radius: 0 50px 50px 0;
+}
+@media screen and (max-width: 900px) {
+    main {
+        width: 95%;
+    }
+    header button[type="button"] {
+        display: block;
+    }
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+    .users-window {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        height: max-content;
+        z-index: 11;
+        box-shadow: 0 20px 30px -30px black;
+        padding-bottom: 0;
+        display: none;
+    }
+    .chat-window .chats .message-incoming,
+    .chat-window .chats .message-outgoing {
+        max-width: 300px;
+    }
+}
+
